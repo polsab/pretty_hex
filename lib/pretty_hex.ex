@@ -2,13 +2,13 @@ defmodule PrettyHex do
 
   @replacement_char "."
 
-  def is_space?(c), do: c == " " || (c >= "\t" && c <= "\r")
+  defp is_space?(c), do: c == " " || (c >= "\t" && c <= "\r")
 
-  def hex_line(<<>>), do: ""
-  def hex_line(<<x::bytes-size(1), tail::binary>>), do: Base.encode16(x) <> " " <> hex_line(tail)
+  defp hex_line(<<>>), do: ""
+  defp hex_line(<<x::bytes-size(1), tail::binary>>), do: Base.encode16(x) <> " " <> hex_line(tail)
 
-  def text_line(<<>>), do: ""
-  def text_line(<<x::bytes-size(1), tail::binary>>) do
+  defp text_line(<<>>), do: ""
+  defp text_line(<<x::bytes-size(1), tail::binary>>) do
     case (String.printable? x) && not is_space? x do
       true -> x <> text_line(tail)
       false -> @replacement_char <> text_line(tail)
