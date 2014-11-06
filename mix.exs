@@ -5,7 +5,15 @@ defmodule PrettyHex.Mixfile do
     [app: :pretty_hex,
      version: "0.0.1",
      elixir: "~> 1.0",
-     deps: deps]
+     source_url: "https://github.com/polsab/pretty_hex",
+     deps: deps,
+     package: [
+       contributors: ["polsab"],
+       licenses: ["Apache 2.0"],
+       links: %{github: "https://github.com/polsab/pretty_hex"}],
+       description: """
+       A binary hex dumping library in Elixir.
+       """]
   end
 
   # Configuration for the OTP application
