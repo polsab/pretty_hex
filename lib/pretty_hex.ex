@@ -17,7 +17,7 @@ defmodule PrettyHex do
 
   @doc """
   This function will hex dump the given binary string. It takes a binary string argument, an optional address start (default is 0),
-  and optional address size (default is 32).
+  and an optional address size (default is 32).
 
   ## Example
   iex> PrettyHex.pretty_hex("This is a test. Just a test.")
